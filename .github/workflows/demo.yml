@@ -1,19 +1,30 @@
-
+#Name of the workflow
 name: demo
+
+#controls when workflow will run
 on:
+#triggers workflow on push or pull request events only for main branch
   push: 
     branches: [ "main" ]
 
+#workflow run is a made up of the one or more jobs
 jobs:
+
+#thsi workflow contains a single job called build
   build:
+#the type of runner that job will runs on
     runs-on: ubuntu-latest
 
+#steps will represents sequence of tasks that will be executed as a part of job
     steps:
+#checkout your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
+      
+#Run a single command using runners shell
       - name: Run a one-line script
         run:  echo "Hello Anil learn Github actions"
-
+        
+#Runs a multi command using runner shell
       - name: Run a multi-line script
         run: |
           echo Add other actions build
