@@ -1,0 +1,24 @@
+#name of the workflow
+name: demo
+on:
+  push: 
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run a one-line script
+        run:  echo "Hello Anil learn Github actions"
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions build
+          echo test, and deploy project.
+        
+      
+
+  
