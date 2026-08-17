@@ -7,10 +7,13 @@ on:
   push: 
     branches: [ "main" ]
 
+#allows you to run this workflow manually from actions tab
+  workflow_dispatch: 
+
 #workflow run is a made up of the one or more jobs
 jobs:
 
-#thsi workflow contains a single job called build
+#this workflow contains a single job called build
   build:
 #the type of runner that job will runs on
     runs-on: ubuntu-latest
@@ -22,7 +25,7 @@ jobs:
       
 #Run a single command using runners shell
       - name: Run a one-line script
-        run:  echo "Hello Anil learn Github actions"
+        run:  echo "Hello Anil get certified in Github actions"
         
 #Runs a multi command using runner shell
       - name: Run a multi-line script
